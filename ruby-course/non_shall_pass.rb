@@ -27,8 +27,8 @@ unless user_password != PASSWORD
   puts "1. Add service credentials"
   puts "2. Retrieve and existing service credentials"
   puts "3. Exit"
-  
   user_selection = gets.chomp
+
 else # if password is wrong
     puts "Invalid Password"
     exit
