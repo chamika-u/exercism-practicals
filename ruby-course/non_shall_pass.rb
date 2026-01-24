@@ -1,6 +1,7 @@
 # logging details
 EMAIL="pakaya@example.com"
 PASSWORD="Pakaya@123"
+PASSWORD_VAULT = {}
 
 # welcome messages and login instructions
 puts "Welcome to Non Shall Pass - A Password Manager"
@@ -26,8 +27,21 @@ unless user_password != PASSWORD
   puts "1. Add service credentials"
   puts "2. Retrieve and existing service credentials"
   puts "3. Exit"
-
+  
+  user_selection = gets.chomp
 else # if password is wrong
     puts "Invalid Password"
     exit
+end
+
+case user_selection
+when "1"
+  puts "This will create new service credentials"
+when "2"
+  puts "This will retrieve existing service credentials"
+when "3"
+  puts "Exiting the program. Goodbye motherfucker!"
+else 
+  puts "Invalid Input. Please put the option number only.(Ex: 1)"
+  exit
 end
