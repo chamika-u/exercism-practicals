@@ -37,6 +37,7 @@ end
 case user_selection
 when "1"
   puts "This will create new service credentials"
+  print "Enter the name of the service: "
 when "2"
   puts "This will retrieve existing service credentials"
 when "3"
