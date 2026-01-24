@@ -42,6 +42,10 @@ when "1"
   new_service=gets.chomp
   PASSWORD_VAULT[new_service]={}
   p PASSWORD_VAULT
+  print "Enter the username for new service"
+  new_service_user_name=gets.chomp
+  print "Enter the password for new service"
+  new_service_password=gets.chomp
 when "2"
   puts "This will retrieve existing service credentials"
 when "3"
