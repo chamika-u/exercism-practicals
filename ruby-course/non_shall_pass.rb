@@ -9,26 +9,26 @@ def welcome_message
 end
 
 # login instructions
-def prompt_user_for_email
+def prompt_user_email
   puts "Please, sign in to continue"
   print "Enter Email: "
   gets.chomp # get input as user_email for EMAIL
 end
 
 # check whether user input is corect or wrong
-def verify_email(user_email)
+def verify_user_email(user_email)
   if user_email!=EMAIL
     puts "Invaild Email"
     exit
   end
 end
 
-def prompt_user_for_new_email
+def prompt_user_for_password
   print "Enter Password: "
   gets.chomp
 end
 
-def verify_user_for_password(user_password)
+def verify_user_password(user_password)
   if user_password!=PASSWORD
     puts "Invalid Password"
     exit
@@ -116,4 +116,14 @@ def exit_program
 end
 
 welcome_message
-user email=prompt_user_for_email
+user_email=prompt_user_email
+verify_user_email(user_email)
+user_password=prompt_user_for_password
+verify_user_password(user_password)
+greet_user(user_email)
+
+loop do
+  menu_options
+  user_selection=get_user_menu_selection
+  handle_user_selection(user_selection)
+end
