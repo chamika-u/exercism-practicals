@@ -12,16 +12,25 @@ end
 def prompt_user_for_email
   puts "Please, sign in to continue"
   print "Enter Email: "
-  user_email=gets.chomp # get input as user_email for EMAIL
+  gets.chomp # get input as user_email for EMAIL
 end
 
 # check whether user input is corect or wrong
 def verify_email(user_email)
-  if user_email==EMAIL
-    print "Enter Password: "
-    user_password=gets.chomp
-  else
+  if user_email!=EMAIL
     puts "Invaild Email"
+    exit
+  end
+end
+
+def prompt_user_for_new_email
+  print "Enter Password: "
+  gets.chomp
+end
+
+def verify_user_for_password(user_password)
+  if user_password!=PASSWORD
+    puts "Invalid Password"
     exit
   end
 end
