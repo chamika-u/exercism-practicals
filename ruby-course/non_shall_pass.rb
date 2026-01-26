@@ -55,17 +55,16 @@ def handle_user_selection(user_selection)
   # performing user selection according to the input
   case user_selection
   when "1"
-    new_service=set_new_service_name
-    
-    set_user_name_for(new_service)
 
-    
+    new_service=set_new_service_name
+    set_user_name_for(new_service)
+    set_password_for(new_service)
    
 
   when "2"
     puts "This will retrieve existing service credentials"
-    print "Please enter the name of the service you wish to access credentials for: "
-    requested_service_name=gets.chomp
+   
+    requested_service_name=retrieve_service_name
     credentials=PASSWORD_VAULT[requested_service_name.to_sym]
     puts "Here are the credentials for #{requested_service_name}: "
     credentials.each do |key, val|
@@ -91,4 +90,16 @@ def set_user_name_for(service)
   new_service_user_name=gets.chomp 
   PASSWORD_VAULT[service.to_sym][:username]=new_service_user_name
   p PASSWORD_VAULT
+end
+
+def set_password_for(service)
+  print "Enter the password for new service: "
+  new_service_password=gets.chomp
+  PASSWORD_VAULT[service.to_sym][:password]=new_service_password
+  p PASSWORD_VAULT
+end
+
+def retrieve_service_name 
+  print "Please enter the name of the service you wish to access credentials for: "
+  gets.chomp
 end
