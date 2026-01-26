@@ -36,13 +36,17 @@ def verify_user_for_password(user_password)
 end
 
 # if password is right then these messages will display 
-unless user_password != PASSWORD
+def greet_user(user_email)
   puts "Hello, #{user_email}."
   puts "What whould you like ro do?"
+end
+
+def menu_options
   puts "1. Add service credentials"
   puts "2. Retrieve and existing service credentials"
   puts "3. Exit"
   user_selection = gets.chomp
+end
 
 else # if password is wrong
     puts "Invalid Password"
