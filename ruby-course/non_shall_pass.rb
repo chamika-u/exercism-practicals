@@ -16,7 +16,7 @@ def prompt_user_for_email
 end
 
 # check whether user input is corect or wrong
-def verify_email
+def verify_email(user_email)
   if user_email==EMAIL
     print "Enter Password: "
     user_password=gets.chomp
