@@ -1,7 +1,10 @@
 # logging details
 EMAIL="pakaya@example.com"
 PASSWORD="Pakaya@123"
-PASSWORD_VAULT = {aws: {username: "Ubetatta", password: "Bahukpn"}}
+PASSWORD_VAULT = {
+  aws: {username: "Ubetatta", password: "Bahukpn"},
+  azure: {username: "Ubeappa", password:"Bahukpn"}
+}
 
 # welcome messages
 def welcome_message 
